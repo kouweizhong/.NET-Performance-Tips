@@ -11,3 +11,19 @@ When declaring Empty string use string.Empty instead of "".
 
 ## Destructors
 Empty destructors should not be used. When a class contains a destructor, an entry is created in the Finalize queue. When the destructor is called, the garbage collector is invoked to process the queue. If the destructor is empty, this simply results in a loss of performance.
+
+## Save expensive call results in a variable
+If you are calling an expensive function and using its result multiple times, save that result in a variable rather than having to call the function multiple times.
+
+````
+// bad
+if (reallySlowSearchForIndex("abc") >= 0) {
+    remove(reallySlowSearchForIndex("abc"));
+}
+
+// good
+int index = reallySlowSearchForIndex("abc");
+if (index >= 0) {
+    remove(index);
+}
+````
