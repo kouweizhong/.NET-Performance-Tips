@@ -1,4 +1,4 @@
-# .NET-Performance-Tips
+# .NET-Performance-Tips and Guidelines
 The term performance generally refers to the execution speed of a program. You can sometimes increase execution speed by following certain basic rules in your source code.
 
 ## Boxing and Unboxing
